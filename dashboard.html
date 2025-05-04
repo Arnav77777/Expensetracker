@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Expense Tracker</title>
+  <link rel="stylesheet" href="Style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+</head>
+<body>
+  <header>
+    <h1>Your Dashboard</h1>
+    <nav>
+      <a href="addexpense.html">Add Expense</a>
+      <a href="viewexpense.html">View Expense</a>
+      <a href="#" id="logout">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Welcome</h2>
+    <p>Here you can manage your expenses.</p>
+    <h2>Monthly Expense Summary</h2>
+    <div id="summary">
+      <p>Total Expenses for This Month: <span id="totalExpenses">₹0.00</span></p>
+      <canvas id="categoryChart" width="400" height="400"></canvas> <!-- Chart for category-wise breakdown -->
+    </div>
+  </main>
+  
+  <!-- Include the external JavaScript file -->
+  <script src="JS/dashboard.js"></script>
+  <!-- Inline JavaScript for the logout button -->
+  <script>
+    document.getElementById('logout').addEventListener('click', function() {
+      // Logic for logging out
+      alert('You have been logged out.');
+      window.location.href = 'index.html'; // Redirect to home page
+    });
+  </script>
+</body>
+</html>
