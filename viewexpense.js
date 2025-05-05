@@ -14,7 +14,6 @@ async function fetchExpenses(filters = {}) {
     }
 }
 
-// Function to render expenses in the table
 function renderExpenses(expenses) {
     const tableBody = document.getElementById('expenseTable').getElementsByTagName('tbody')[0];
     tableBody.innerHTML = ''; // Clear existing rows
@@ -27,10 +26,13 @@ function renderExpenses(expenses) {
         row.insertCell(3).innerText = expense.description;
 
         const actionsCell = row.insertCell(4);
-        actionsCell.innerHTML = `<button onclick="deleteExpense(${expense.id})">Delete</button>`;
+        actionsCell.innerHTML = `
+            <button class="delete-btn" onclick="deleteExpense(${expense.id})">
+                <i class="fas fa-trash-alt"></i> Delete
+            </button>
+        `;
     });
 }
-
 // Function to delete an expense
 async function deleteExpense(expenseId) {
     if (!confirm('Are you sure you want to delete this expense?')) {

@@ -3,11 +3,12 @@ include 'includes/db.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.html');
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'User not logged in']);
     exit;
 }
 
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id']; // Ensure this is set
 $currentMonth = date('Y-m-01'); // First day of the current month
 $nextMonth = date('Y-m-01', strtotime('+1 month')); // First day of the next month
 
