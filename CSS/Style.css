@@ -404,3 +404,17 @@ footer {
     align-items: center;
   }
 }
+
+/* Update Profile and Delete Profile Buttons */
+.btn-danger {
+  background: red;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: darkred;
+}
+
+form {
+  margin-bottom: 2rem;
+}
